@@ -152,6 +152,25 @@ Add db records
     - Query to verify data is in (select * from software_engineer)
     - Make a request to the software-engineers endpoint - should see the records
 
+Create endpoint to add new software engineers
+    - In practice, we won't use the model (the @Entity class).
+    - We use the Entity for the db. But when we query we would usually use another object (?)
+    - Create a new method in the controller: addNewSoftwareEngineer.
+    - It takes a single param - a SoftwareEngineer.
+    - anotate the param with @RequestBody to deserialize from the body.
+    - Create a new method insertSoftwareEngineer in the Service.
+    - it calls the repository object .save(softwareEngineer).
+    - Note: The .save() takes in an entity (=our objects from SoftwareEngineer).
+    - Add a new POST request in intellij requests.html.
+      Make sure to include the name and teckStack in the body as json.
+    - Annotate the parameter in the controller method with @RequestBody.
+      This way spring will extract the params from the body.
+    - Rerun the app.
+      Test the endpoints.
+      Note: the db is initially empty as we configured it that way.
+    - Check the db using psql to double-verify.
+      Note that you can use the same psql session, no need to restart.
+
 
 ```
 
