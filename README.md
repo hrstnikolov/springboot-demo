@@ -95,6 +95,31 @@ Create table to store software engineers
     - return to the psql terminal session from above
     - run `\dt` -> confirm the table is created
 
+Create repository interface for crud operations
+    - create new interface SoftwareEngineerRepository
+    - it extends JpaRepository<SoftwareEngineer, Integer>
+    - SoftwareEngineer is the model
+
+Create service (SoftwareEngineerService)
+    - annotate it with @Service
+    - It has a single private field (instance field) - the repo from above
+    - also - a constructor
+    - also a single method, public - getAllSoftwareEngineers
+    - the method takes no params
+    - uses the repo from the state and calls the findAll method on it
+    - so, the service hold the logic to query the db, retrieve, filter, and sort the data
+    - it uses a repository object
+    - the method returns list of SoftwareEngineer - the model class
+
+Update the controller
+    - the controller state shall include the service
+    - the controller maps the route to functionality
+    - create new field in the controller with the service (private final)
+    - create constructor
+    - update the method to get all engineers
+    - rerun the app; verify the software-engineer endpoint now returns an empty list
+
+
 ```
 
 
