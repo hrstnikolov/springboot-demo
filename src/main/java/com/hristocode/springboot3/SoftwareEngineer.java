@@ -1,14 +1,18 @@
 package com.hristocode.springboot3;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
 import java.util.Objects;
 
+@Entity
 public class SoftwareEngineer {
+    @Id
     private Integer id;
     private String name;
     private String techStack;
 
-    public SoftwareEngineer(Integer id) {
-        this.id = id;
+    public SoftwareEngineer() {
     }
 
     public SoftwareEngineer(Integer id, String name, String techStack) {
