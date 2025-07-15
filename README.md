@@ -171,6 +171,17 @@ Create endpoint to add new software engineers
     - Check the db using psql to double-verify.
       Note that you can use the same psql session, no need to restart.
 
+Get engineer by id
+    - create another mapping function in the controller: getSoftwareEngineerById
+    - it has a single param Integer id
+    - annotate it with @PathVariable
+    - also: include the variable in the path: @GetMapping("{id}")
+    - create a method in the service
+    - in it, use the repo and call findById
+    - also, chain orElseThrough(() -> new IllegalStateException(id + " not found."))
+    - add a new request in requests.html
+    - test that finding by id works
+
 
 ```
 

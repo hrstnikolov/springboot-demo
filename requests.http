@@ -4,6 +4,9 @@ GET http://localhost:8080/hello
 ### get all software engineers
 GET http://localhost:8080/api/v1/software-engineers
 
+### get a software engineer by id
+GET http://localhost:8080/api/v1/software-engineers/1
+
 ### add a software engineers
 POST http://localhost:8080/api/v1/software-engineers
 Content-Type: application/json
