@@ -119,6 +119,39 @@ Update the controller
     - update the method to get all engineers
     - rerun the app; verify the software-engineer endpoint now returns an empty list
 
+Add db records
+    - Add records
+    ```bash
+    # Shell into the container
+    docker exec -it <container_name> psql --user hristo
+
+    # connect to the database
+    \c mydb
+
+    # List all tables in the db
+    \dt
+
+    # Show table columns (table definition)
+    \d <table_name>
+
+    # Get all
+    select * from software_engineer;
+
+    # Add records
+    # SQL use single quotes for literals
+    insert into software_engineer (name, tech_stack) values ('Poll Scot', 'python, ruby, binary data');
+
+    ```
+    - The command above will fail with: null value in column "id"
+    - To fix it, add another annotation: @GeneratedValue(strategy=GenerationType.IDENTITY)
+    - in the id model field, the field declaration
+    - Rerun the app;
+      keep the same psql shell running;
+      retry the insert command, this time should work
+    - Add another record
+    - Query to verify data is in (select * from software_engineer)
+    - Make a request to the software-engineers endpoint - should see the records
+
 
 ```
 
