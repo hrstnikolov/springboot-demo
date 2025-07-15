@@ -1,2 +1,5 @@
-###
+### show hello
 GET http://localhost:8080/hello
+
+### get all software engineers
+GET http://localhost:8080/api/v1/software-engineers

@@ -20,6 +20,27 @@ Create http request
     - make sure the protocol is http and not https
     - verify the endpoint
 
+Create new Java model
+    - create new class SoftwareEngineer
+    - fields: id: int, name: str, tech stack: str
+    - all field are private
+    - create getters and setters
+    - create equalsTo and hashCode
+    - don't create toString
+    - use the intellij tools
+
+Create new controller
+    - create new class SoftwareEngineerController
+    - annotate with RestController
+    - annotate with RequestMapping to add prefix in uri
+    - use api/v1/software-engineers
+
+Create method for GET requests
+    - public method
+    - return type: List<SoftwareEngineer>
+    - make it return hardcoded data for now (=mocked data)
+    - create new http request and verify
+
 ```
 
 
