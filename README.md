@@ -10,6 +10,16 @@ Create blank Spring Boot project using IntelliJ
 - choose matching jdk version (e.g. 21)
 - select the Spring Web dependency
 
+Create /hello endpoint
+    - annotate the main app class with RestController
+    - create new method that returns a string
+    - annotate it with GetMapping
+
+Create http request
+    - in project root
+    - make sure the protocol is http and not https
+    - verify the endpoint
+
 ```
 
 
@@ -31,10 +41,3 @@ Create blank Spring Boot project using IntelliJ
    - This time initializing a git repo and commit the changes.
    - Push to a remote.
    - Try to finish in x1 the tutorial duration.
-
-
-
-Create blank Spring Boot project using IntelliJ
-- remove the last portion of the pacakge name
-- choose matching jdk version (e.g. 21)
-- select the Spring Web dependency
